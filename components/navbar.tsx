@@ -63,6 +63,13 @@ export default function Navbar() {
               Contact
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all"></span>
             </a>
+            <a
+              href="/timetable"
+              className="text-sm font-semibold hover:text-primary hover:scale-110 transition-all relative group"
+            >
+              📅 Timetable
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all"></span>
+            </a>
           </div>
 
           {/* Auth Dropdown - Fun & Colorful */}
@@ -135,6 +142,12 @@ export default function Navbar() {
             >
               Contact
             </a>
+            <Link
+              href="/timetable"
+              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors"
+            >
+              📅 Timetable
+            </Link>
             <hr className="my-2 border-primary/20" />
             <Link
               href="/teacher/login"

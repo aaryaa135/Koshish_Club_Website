@@ -17,22 +17,22 @@ export default function Contact() {
 
   const coordinators = [
     {
-      name: "Rahul Sharma",
+      name: "Jigyash Shukla",
       role: "Club Coordinator",
-      phone: "+91-9876543210",
-      email: "rahul@koshishclub.org",
+      phone: "+91-6230012263",
+      email: "231030151@juitsolan.in",
     },
     {
-      name: "Neha Singh",
-      role: "Academic Lead",
-      phone: "+91-9876543211",
-      email: "neha@koshishclub.org",
+      name: "Abhishek Chopra",
+      role: "Club Coordinator",
+      phone: "+91-8295383645",
+      email: "231030116@juitsolan.in",
     },
     {
-      name: "Arjun Patel",
-      role: "Student Coordinator",
+      name: "Prof. Hemant Sood",
+      role: "Faculty Coordinator",
       phone: "+91-9876543212",
-      email: "arjun@koshishclub.org",
+      email: "hemant.sood@juitsolan.in",
     },
   ]
 

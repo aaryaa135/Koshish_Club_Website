@@ -24,7 +24,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-xl text-foreground/70 leading-relaxed font-medium">
-              Join thousands of students discovering that learning doesn't have to feel like work. Get help from amazing
+              Join many students discovering that learning doesn't have to feel like work. Get help from amazing
               teachers, track your awesome progress, and grow at your own pace. 100% free. Zero pressure. Just pure
               learning joy!
             </p>
@@ -47,7 +47,7 @@ export default function Hero() {
 
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="fun-card bg-gradient-to-br from-primary/10 to-primary/5">
-                <p className="text-4xl font-black text-primary">500+</p>
+                <p className="text-4xl font-black text-primary">50+</p>
                 <p className="text-sm font-semibold text-muted-foreground">Happy Students</p>
               </div>
               <div className="fun-card bg-gradient-to-br from-accent/10 to-accent/5">

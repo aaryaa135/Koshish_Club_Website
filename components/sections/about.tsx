@@ -1,8 +1,8 @@
 export default function About() {
   const initiatives = [
-    { text: "Free Classes for College Students", emoji: "🎓" },
+    { text: "Free Classes for Students", emoji: "🎓" },
     { text: "Evening Classes for School Kids", emoji: "👧" },
-    { text: "NCERT-Aligned Curriculum", emoji: "📚" },
+    { text: "School-Aligned Curriculum", emoji: "📚" },
     { text: "Experienced & Passionate Teachers", emoji: "👨‍🏫" },
     { text: "Individual Attention & Guidance", emoji: "💬" },
     { text: "Regular Progress Tracking", emoji: "📊" },

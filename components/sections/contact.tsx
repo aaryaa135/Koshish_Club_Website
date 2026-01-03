@@ -149,10 +149,10 @@ export default function Contact() {
               <h4 className="font-bold mb-3 text-lg">Office Hours</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
                 <p>
-                  <strong className="text-foreground">Mon-Fri:</strong> 4:00 PM - 7:00 PM
+                  <strong className="text-foreground">Mon-Fri:</strong> 5:00 PM - 7:00 PM
                 </p>
                 <p>
-                  <strong className="text-foreground">Saturday:</strong> 10:00 AM - 2:00 PM
+                  <strong className="text-foreground">Saturday:</strong> 5:00 AM - 7:00 PM
                 </p>
                 <p>
                   <strong className="text-foreground">Sunday:</strong> Closed (Resting day)

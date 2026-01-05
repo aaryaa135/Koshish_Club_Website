@@ -19,7 +19,7 @@ export default function ParentGuide() {
     {
       icon: BarChart3,
       title: "Exam Preparation",
-      desc: "Know when exams are happening and how we're preparing your child with curated resources and mock tests.",
+      desc: "Know when exams are happening and how we're preparing your child with curated resources and regular mock tests.",
     },
     {
       icon: Heart,

@@ -20,39 +20,29 @@ export default function TeacherLogin() {
     e.preventDefault()
     setIsLoading(true)
 
-    // <BACKEND_CONNECTION>
-    // Replace this demo logic with actual backend call:
-    // const response = await fetch('/api/teacher/login', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ email, password })
-    // })
-    // const data = await response.json()
-    // if (data.success) {
-    //   localStorage.setItem('teacherId', data.teacherId)
-    //   localStorage.setItem('teacherEmail', email)
-    //   localStorage.setItem('teacherToken', data.token)
-    //   if (rememberMe) localStorage.setItem('teacherRemember', email)
-    //   router.push('/teacher/dashboard')
-    // }
-
-    // Demo: Save credentials and redirect
     try {
-      localStorage.setItem("teacherEmail", email)
-      localStorage.setItem("teacherPassword", password)
-      localStorage.setItem("teacherId", "demo-teacher-" + Math.random().toString(36).substr(2, 9))
+      const response = await fetch('/api/auth/teacher-login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      })
+      const data = await response.json()
 
-      if (rememberMe) {
-        localStorage.setItem("teacherRemember", email)
+      if (data.success) {
+        // Save user info in localStorage (token handled by cookie)
+        localStorage.setItem('teacherId', data.userId)
+        localStorage.setItem('teacherEmail', email)
+        localStorage.setItem('teacherToken', data.token)
+        if (rememberMe) localStorage.setItem('teacherRemember', email)
+        router.push('/teacher/dashboard')
+      } else {
+        alert(data.message || 'Login failed. Please try again.')
       }
-
-      setTimeout(() => {
-        setIsLoading(false)
-        router.push("/teacher/dashboard")
-      }, 800)
     } catch (error) {
+      console.error('Login error:', error)
+      alert('Login failed. Please try again.')
+    } finally {
       setIsLoading(false)
-      alert("Login failed. Please try again.")
     }
   }
 

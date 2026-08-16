@@ -4,7 +4,7 @@ import { Sparkles, Zap } from "lucide-react"
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-primary/15 via-accent/10 to-secondary/5 py-20 md:py-40">
+    <section className="relative overflow-hidden bg-gradient-to-b from-primary/20 via-accent/10 to-secondary/5 py-20 md:py-40">
       <div className="absolute top-10 left-5 w-20 h-20 bg-primary/20 rounded-3xl blur-2xl animate-float"></div>
       <div className="absolute bottom-20 right-10 w-32 h-32 bg-secondary/20 rounded-full blur-3xl animate-bounce-slow"></div>
 
@@ -66,13 +66,13 @@ export default function Hero() {
             <div className="relative">
               <div className="w-80 h-80 bg-gradient-to-br from-primary/30 via-accent/20 to-secondary/20 rounded-3xl border-4 border-primary/40 shadow-2xl overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center space-y-6 animate-bounce-slow">
+                  <div className="text-center space-y-6 animate-float-slow">
                     <div className="text-8xl">🎓</div>
                     <p className="text-2xl font-bold text-primary">Learn & Grow!</p>
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -right-6 text-6xl animate-float">📚</div>
+              <div className="absolute -bottom-6 -right-6 text-6xl animate-bounce-slow">📚</div>
               <div className="absolute top-10 -left-10 text-7xl animate-bounce-slow">✨</div>
             </div>
           </div>

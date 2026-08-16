@@ -46,7 +46,7 @@ export default function ParentGuide() {
             return (
               <Card
                 key={idx}
-                className="p-6 border-2 border-dashed border-primary/20 hover:border-primary/50 transition-all"
+                className="p-6 fun-card bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30 hover:border-primary/50 transition-all"
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">

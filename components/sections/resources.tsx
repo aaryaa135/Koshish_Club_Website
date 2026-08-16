@@ -10,7 +10,7 @@ export default function Resources() {
   ]
 
   return (
-    <section id="resources" className="py-16 md:py-24 bg-primary/5">
+    <section id="resources" className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-secondary/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Learning Resources</h2>
@@ -21,7 +21,7 @@ export default function Resources() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {resources.map((resource, idx) => (
-            <div key={idx} className="bg-card rounded-xl p-6 border border-border">
+            <div key={idx} className="fun-card bg-card rounded-xl p-6 border border-primary/30">
               <BookOpen size={28} className="text-primary mb-3" />
               <h3 className="text-lg font-bold mb-3">{resource.title}</h3>
               <div className="space-y-2 mb-4">

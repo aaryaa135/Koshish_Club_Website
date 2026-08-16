@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b-2 border-primary/20 shadow-lg">
+    <nav className="sticky top-0 z-50 bg-gradient-to-b from-primary/10 via-accent/5 to-secondary/5 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b-2 border-primary/20 shadow-lg fun-shadow">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo - Fun & Colorful */}
@@ -30,42 +30,42 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-8">
             <a
               href="/#about"
-              className="text-sm font-semibold hover:text-primary hover:scale-110 transition-all relative group"
+              className="relative group text-sm font-semibold hover:text-primary hover:scale-110 transition-all"
             >
               About
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all"></span>
             </a>
             <a
               href="/#features"
-              className="text-sm font-semibold hover:text-primary hover:scale-110 transition-all relative group"
+              className="relative group text-sm font-semibold hover:text-primary hover:scale-110 transition-all"
             >
               What We Do
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all"></span>
             </a>
             <a
               href="/#resources"
-              className="text-sm font-semibold hover:text-primary hover:scale-110 transition-all relative group"
+              className="relative group text-sm font-semibold hover:text-primary hover:scale-110 transition-all"
             >
               Resources
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all"></span>
             </a>
             <a
               href="/#impact"
-              className="text-sm font-semibold hover:text-primary hover:scale-110 transition-all relative group"
+              className="relative group text-sm font-semibold hover:text-primary hover:scale-110 transition-all"
             >
               Impact
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all"></span>
             </a>
             <a
               href="/#contact"
-              className="text-sm font-semibold hover:text-primary hover:scale-110 transition-all relative group"
+              className="relative group text-sm font-semibold hover:text-primary hover:scale-110 transition-all"
             >
               Contact
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all"></span>
             </a>
             <a
               href="/timetable"
-              className="text-sm font-semibold hover:text-primary hover:scale-110 transition-all relative group"
+              className="relative group text-sm font-semibold hover:text-primary hover:scale-110 transition-all"
             >
               📅 Timetable
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all"></span>
@@ -80,19 +80,19 @@ export default function Navbar() {
                   Login
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48 rounded-2xl">
+              <DropdownMenuContent align="end" className="w-48 rounded-2xl fun-card">
                 <DropdownMenuItem asChild>
-                  <Link href="/teacher/login" className="cursor-pointer text-base font-semibold">
+                  <Link href="/teacher/login" className="cursor-pointer text-base font-semibold block py-2 px-4 hover:bg-primary/10 transition-colors">
                     👨‍🏫 Teacher Login
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/coordinator/login" className="cursor-pointer text-base font-semibold">
+                  <Link href="/coordinator/login" className="cursor-pointer text-base font-semibold block py-2 px-4 hover:bg-primary/10 transition-colors">
                     📋 Coordinator Login
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/student" className="cursor-pointer text-base font-semibold">
+                  <Link href="/student" className="cursor-pointer text-base font-semibold block py-2 px-4 hover:bg-primary/10 transition-colors">
                     👧 Student Portal
                   </Link>
                 </DropdownMenuItem>
@@ -114,56 +114,56 @@ export default function Navbar() {
           <div className="lg:hidden pb-4 border-t-2 border-primary/20 space-y-2">
             <a
               href="/#about"
-              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors fun-shadow"
             >
               About
             </a>
             <a
               href="/#features"
-              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors fun-shadow"
             >
               What We Do
             </a>
             <a
               href="/#resources"
-              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors fun-shadow"
             >
               Resources
             </a>
             <a
               href="/#impact"
-              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors fun-shadow"
             >
               Impact
             </a>
             <a
               href="/#contact"
-              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors fun-shadow"
             >
               Contact
             </a>
             <Link
               href="/timetable"
-              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors fun-shadow"
             >
               📅 Timetable
             </Link>
             <hr className="my-2 border-primary/20" />
             <Link
               href="/teacher/login"
-              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors fun-shadow"
             >
               👨‍🏫 Teacher Login
             </Link>
             <Link
               href="/coordinator/login"
-              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors fun-shadow"
             >
               📋 Coordinator Login
             </Link>
             <Link
               href="/student"
-              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold hover:bg-primary/10 rounded-2xl transition-colors fun-shadow"
             >
               👧 Student Portal
             </Link>

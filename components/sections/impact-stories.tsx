@@ -39,7 +39,7 @@ export default function ImpactStories() {
   ]
 
   return (
-    <section id="impact" className="py-16 bg-gradient-to-b from-secondary/10 to-transparent">
+    <section id="impact" className="py-16 bg-gradient-to-b from-secondary/15 to-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Badge className="cute-badge mb-4">Success Stories</Badge>
@@ -53,7 +53,7 @@ export default function ImpactStories() {
           {stories.map((story) => (
             <Card
               key={story.id}
-              className="p-6 border-2 border-dashed border-secondary/30 hover:border-secondary/60 transition-all"
+              className="p-6 fun-card bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/30 hover:border-primary/50 transition-all"
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm">

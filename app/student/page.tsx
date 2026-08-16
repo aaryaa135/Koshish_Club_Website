@@ -85,7 +85,7 @@ export default function StudentPortal() {
   ])
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-gradient-to-r from-primary/10 via-accent/5 to-secondary/10 text-background">
       {/* Header */}
       <div className="bg-gradient-to-r from-primary to-accent text-primary-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
@@ -99,7 +99,7 @@ export default function StudentPortal() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {/* Student Info Card */}
-        <Card className="p-6 bg-gradient-to-r from-primary/10 via-accent/5 to-secondary/10 border-2 border-dashed border-primary/30">
+        <Card className="p-6 fun-card bg-gradient-to-r from-primary/10 via-accent/5 to-secondary/10 border-2 border-primary/30">
           <div className="flex items-start justify-between">
             <div className="flex items-start gap-6">
               <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center text-white text-3xl font-bold shadow-lg">
@@ -139,7 +139,7 @@ export default function StudentPortal() {
               {classes.map((cls) => (
                 <Card
                   key={cls.id}
-                  className="p-6 border-2 border-dashed border-primary/20 hover:border-primary/50 transition-all"
+                  className="p-6 fun-card bg-gradient-to-r from-primary/10 via-accent/20 to-secondary/10 border-2 border-primary/20 hover:border-primary/50 transition-all"
                 >
                   <div className="flex justify-between items-start mb-4">
                     <div>
@@ -180,9 +180,9 @@ export default function StudentPortal() {
             <h2 className="text-2xl font-bold">Your Achievements</h2>
             <div className="space-y-4">
               {classes.map((cls) => (
-                <Card key={cls.id} className="p-6">
+                <Card key={cls.id} className="p-6 fun-card">
                   <h3 className="font-bold text-lg mb-4">{cls.name} Milestones</h3>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {cls.milestones.map((milestone, idx) => (
                       <div
                         key={idx}
@@ -216,7 +216,7 @@ export default function StudentPortal() {
             <h2 className="text-2xl font-bold">Upcoming Tests & Exams</h2>
             <div className="space-y-4">
               {exams.map((exam) => (
-                <Card key={exam.id} className="p-6">
+                <Card key={exam.id} className="p-6 fun-card">
                   <div className="flex items-start gap-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center flex-shrink-0">
                       <Calendar className="text-primary" size={24} />
@@ -267,7 +267,7 @@ export default function StudentPortal() {
           <TabsContent value="progress" className="space-y-6">
             <h2 className="text-2xl font-bold">Overall Progress</h2>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <Card className="p-6 bg-gradient-to-br from-primary/10 to-transparent">
+              <Card className="p-6 fun-card bg-gradient-to-br from-primary/10 to-transparent">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center">
                     <BookOpen className="text-primary" size={24} />
@@ -279,7 +279,7 @@ export default function StudentPortal() {
                 </div>
               </Card>
 
-              <Card className="p-6 bg-gradient-to-br from-accent/10 to-transparent">
+              <Card className="p-6 fun-card bg-gradient-to-br from-accent/10 to-transparent">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center">
                     <TrendingUp className="text-accent" size={24} />
@@ -293,7 +293,7 @@ export default function StudentPortal() {
                 </div>
               </Card>
 
-              <Card className="p-6 bg-gradient-to-br from-secondary/10 to-transparent">
+              <Card className="p-6 fun-card bg-gradient-to-br from-secondary/10 to-transparent">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center">
                     <Zap className="text-secondary" size={24} />
@@ -308,7 +308,7 @@ export default function StudentPortal() {
               </Card>
             </div>
 
-            <Card className="p-6">
+            <Card className="p-6 fun-card">
               <h3 className="text-xl font-bold mb-6">Performance by Subject</h3>
               <div className="space-y-6">
                 {classes.map((cls) => (

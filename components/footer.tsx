@@ -5,13 +5,13 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gradient-to-b from-foreground to-foreground/95 text-background py-12 md:py-16">
+    <footer className="bg-gradient-to-b from-primary/10 via-accent/5 to-secondary/10 text-background py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2 font-bold text-lg mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-primary-foreground">
+              <div className="w-8 h-8 bg-gradient-to-br from-primary via-secondary to-accent rounded-xl flex items-center justify-center text-primary-foreground">
                 K
               </div>
               <span>Koshish Club</span>
@@ -79,23 +79,23 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Follow Us</h4>
             <div className="flex gap-4">
-              <a href="#" className="opacity-80 hover:opacity-100 transition-opacity p-2 bg-background/20 rounded-lg">
+              <a href="#" className="opacity-80 hover:opacity-100 transition-opacity p-2 bg-primary/20 rounded-lg">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="opacity-80 hover:opacity-100 transition-opacity p-2 bg-background/20 rounded-lg">
+              <a href="#" className="opacity-80 hover:opacity-100 transition-opacity p-2 bg-primary/20 rounded-lg">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="opacity-80 hover:opacity-100 transition-opacity p-2 bg-background/20 rounded-lg">
+              <a href="#" className="opacity-80 hover:opacity-100 transition-opacity p-2 bg-primary/20 rounded-lg">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="opacity-80 hover:opacity-100 transition-opacity p-2 bg-background/20 rounded-lg">
+              <a href="#" className="opacity-80 hover:opacity-100 transition-opacity p-2 bg-primary/20 rounded-lg">
                 <Linkedin size={20} />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-background/20 pt-8">
+        <div className="border-t border-primary/20 pt-8">
           <div className="grid md:grid-cols-3 gap-4 mb-4 text-sm opacity-75">
             <p>&copy; {currentYear} Koshish Club. All rights reserved.</p>
             <p className="text-center">Made with love for education</p>

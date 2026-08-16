@@ -71,8 +71,8 @@ export default function TeacherDashboard() {
   }
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="bg-primary text-primary-foreground">
+    <main className="min-h-screen bg-gradient-to-r from-primary/10 via-accent/5 to-secondary/10 text-background">
+      <div className="bg-gradient-to-b from-primary via-accent to-secondary text-primary-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
           <div className="flex items-center gap-6">
             <Link href="/" className="font-bold text-lg hover:opacity-80 transition-opacity flex items-center gap-2">
@@ -89,7 +89,7 @@ export default function TeacherDashboard() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <Card className="p-6">
+          <Card className="fun-card bg-gradient-to-r from-primary/10 to-secondary/10 border-2 border-primary/30 p-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                 <BookOpen className="text-primary" size={24} />
@@ -101,7 +101,7 @@ export default function TeacherDashboard() {
             </div>
           </Card>
 
-          <Card className="p-6">
+          <Card className="fun-card bg-gradient-to-r from-accent/10 to-secondary/10 border-2 border-accent/30 p-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                 <Users className="text-accent" size={24} />
@@ -113,7 +113,7 @@ export default function TeacherDashboard() {
             </div>
           </Card>
 
-          <Card className="p-6">
+          <Card className="fun-card bg-gradient-to-r from-secondary/10 to-primary/10 border-2 border-secondary/30 p-6">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
                 <TrendingUp className="text-secondary" size={24} />
@@ -129,7 +129,7 @@ export default function TeacherDashboard() {
                             1,
                             classes.reduce((sum, c) => sum + c.students.length, 0),
                           ),
-                      )}
+                        )}
                   %
                 </p>
               </div>
@@ -156,9 +156,7 @@ export default function TeacherDashboard() {
                 <Card
                   key={cls.id}
                   onClick={() => setActiveClass(cls)}
-                  className={`p-6 cursor-pointer transition-all ${
-                    activeClass.id === cls.id ? "border-primary border-2 bg-primary/5" : "hover:shadow-lg"
-                  }`}
+                  className="p-6 cursor-pointer transition-all fun-card bg-gradient-to-r from-primary/10 to-secondary/10 border-2 border-primary/30 hover:shadow-lg"
                 >
                   <h3 className="font-bold text-lg">{cls.name}</h3>
                   <p className="text-muted-foreground text-sm mb-4">{cls.subject}</p>
@@ -170,7 +168,7 @@ export default function TeacherDashboard() {
               ))}
             </div>
 
-            <Card className="p-6">
+            <Card className="fun-card p-6">
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-bold">Students in {activeClass.name}</h3>
               </div>
@@ -180,79 +178,75 @@ export default function TeacherDashboard() {
               ) : (
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-border">
-                        <th className="text-left py-3 px-4 font-semibold">Name</th>
-                        <th className="text-left py-3 px-4 font-semibold">Roll No.</th>
-                        <th className="text-left py-3 px-4 font-semibold">Attendance</th>
-                        <th className="text-left py-3 px-4 font-semibold">Avg Marks</th>
-                        <th className="text-left py-3 px-4 font-semibold">Next Exam</th>
-                        <th className="text-left py-3 px-4 font-semibold">Actions</th>
+                    <tr className="border-b border-border">
+                      <th className="text-left py-3 px-4 font-semibold">Name</th>
+                      <th className="text-left py-3 px-4 font-semibold">Roll No.</th>
+                      <th className="text-left py-3 px-4 font-semibold">Attendance</th>
+                      <th className="text-left py-3 px-4 font-semibold">Avg Marks</th>
+                      <th className="text-left py-3 px-4 font-semibold">Next Exam</th>
+                      <th className="text-left py-3 px-4 font-semibold">Actions</th>
+                    </tr>
+                    {activeClass.students.map((student) => (
+                      <tr key={student.id} className="border-b border-border hover:bg-muted/50 transition-colors">
+                        <td className="py-3 px-4">{student.name}</td>
+                        <td className="py-3 px-4">{student.roll}</td>
+                        <td className="py-3 px-4">
+                          <Badge variant={student.attendance >= 90 ? "default" : "secondary"}>
+                            {student.attendance}%
+                          </Badge>
+                        </td>
+                        <td className="py-3 px-4 font-semibold">{student.avgMarks}%</td>
+                        <td className="py-3 px-4 text-muted-foreground">
+                          {new Date(student.nextExam).toLocaleDateString()}
+                        </td>
+                        <td className="py-3 px-4">
+                          <div className="flex gap-2">
+                            <Button variant="ghost" size="sm" className="gap-1">
+                              <Edit2 size={14} /> Edit
+                            </Button>
+                            <Button variant="ghost" size="sm" className="text-destructive hover:text-destructive">
+                              <Trash2 size={14} />
+                            </Button>
+                          </div>
+                        </td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {activeClass.students.map((student) => (
-                        <tr key={student.id} className="border-b border-border hover:bg-muted/50 transition-colors">
-                          <td className="py-3 px-4">{student.name}</td>
-                          <td className="py-3 px-4">{student.roll}</td>
-                          <td className="py-3 px-4">
-                            <Badge variant={student.attendance >= 90 ? "default" : "secondary"}>
-                              {student.attendance}%
-                            </Badge>
-                          </td>
-                          <td className="py-3 px-4 font-semibold">{student.avgMarks}%</td>
-                          <td className="py-3 px-4 text-muted-foreground">
-                            {new Date(student.nextExam).toLocaleDateString()}
-                          </td>
-                          <td className="py-3 px-4">
-                            <div className="flex gap-2">
-                              <Button variant="ghost" size="sm" className="gap-1">
-                                <Edit2 size={14} /> Edit
-                              </Button>
-                              <Button variant="ghost" size="sm" className="text-destructive hover:text-destructive">
-                                <Trash2 size={14} />
-                              </Button>
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
+                    ))}
                   </table>
                 </div>
               )}
-            </Card>
 
-            {activeClass.students.length > 0 && (
-              <Card className="p-6">
-                <h3 className="text-xl font-bold mb-6">Today's Attendance ({new Date().toLocaleDateString()})</h3>
-                <div className="space-y-4">
-                  {activeClass.students.map((student) => (
-                    <div
-                      key={student.id}
-                      className="flex items-center justify-between p-4 border border-border rounded-lg"
-                    >
-                      <span className="font-medium">{student.name}</span>
-                      <div className="flex gap-2">
-                        <Button size="sm" variant="outline">
-                          Present
-                        </Button>
-                        <Button size="sm" variant="outline">
-                          Absent
-                        </Button>
+              {activeClass.students.length > 0 && (
+                <Card className="p-6 fun-card">
+                  <h3 className="text-xl font-bold mb-6">Today's Attendance ({new Date().toLocaleDateString()})</h3>
+                  <div className="space-y-4">
+                    {activeClass.students.map((student) => (
+                      <div
+                        key={student.id}
+                        className="flex items-center justify-between p-4 border border-primary/30 rounded-lg fun-shadow"
+                      >
+                        <span className="font-medium">{student.name}</span>
+                        <div className="flex gap-2">
+                          <Button size="sm" variant="outline">
+                            Present
+                          </Button>
+                          <Button size="sm" variant="outline">
+                            Absent
+                          </Button>
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </div>
-                <Button className="w-full mt-6">
-                  Submit Attendance
-                  <span className="ml-2 text-xs">(BACKEND: POST /api/attendance)</span>
-                </Button>
-              </Card>
-            )}
+                    ))}
+                  </div>
+                  <Button className="w-full mt-6">
+                    Submit Attendance
+                    <span className="ml-2 text-xs">(BACKEND: POST /api/attendance)</span>
+                  </Button>
+                </Card>
+              )}
+            </Card>
           </TabsContent>
 
           <TabsContent value="manage" className="space-y-6">
-            <Card className="p-6">
+            <Card className="fun-card p-6">
               <h3 className="text-xl font-bold mb-4">Add New Class</h3>
               <div className="space-y-4">
                 <input
@@ -260,21 +254,21 @@ export default function TeacherDashboard() {
                   placeholder="Class Name (e.g., Class 8 Mathematics)"
                   value={newClass.name}
                   onChange={(e) => setNewClass({ ...newClass, name: e.target.value })}
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background"
+                  className="w-full px-4 py-2 border border-primary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                 />
                 <input
                   type="text"
                   placeholder="Subject (e.g., Mathematics)"
                   value={newClass.subject}
                   onChange={(e) => setNewClass({ ...newClass, subject: e.target.value })}
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background"
+                  className="w-full px-4 py-2 border border-primary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                 />
                 <input
                   type="text"
                   placeholder="Class Level (e.g., Class 8)"
                   value={newClass.level}
                   onChange={(e) => setNewClass({ ...newClass, level: e.target.value })}
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background"
+                  className="w-full px-4 py-2 border border-primary/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background"
                 />
                 <Button onClick={handleAddClass} className="w-full">
                   Create Class

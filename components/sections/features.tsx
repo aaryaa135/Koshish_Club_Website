@@ -7,7 +7,7 @@ export default function Features() {
       title: "Expert Teachers",
       description: "Passionate educators who love teaching",
       emoji: "👨‍🏫",
-      color: "from-primary/10 to-primary/5",
+      color: "from-primary/10 to-accent/10",
       borderColor: "border-primary/30",
     },
     {
@@ -15,7 +15,7 @@ export default function Features() {
       title: "Fun Learning",
       description: "NCERT aligned but never boring",
       emoji: "📖",
-      color: "from-accent/10 to-accent/5",
+      color: "from-accent/10 to-secondary/10",
       borderColor: "border-accent/30",
     },
     {
@@ -23,7 +23,7 @@ export default function Features() {
       title: "Track Progress",
       description: "See your improvement over time",
       emoji: "📈",
-      color: "from-secondary/10 to-secondary/5",
+      color: "from-secondary/10 to-primary/10",
       borderColor: "border-secondary/30",
     },
     {
@@ -31,13 +31,13 @@ export default function Features() {
       title: "Earn Badges",
       description: "Get recognized for your achievements",
       emoji: "🏆",
-      color: "from-orange-100 to-orange-50",
-      borderColor: "border-orange-300",
+      color: "from-primary/10 to-secondary/10",
+      borderColor: "border-primary/30",
     },
   ]
 
   return (
-    <section id="features" className="py-20 md:py-32 bg-gradient-to-b from-background to-primary/5">
+    <section id="features" className="py-20 md:py-32 bg-gradient-to-b from-primary/5 to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-5xl md:text-6xl font-black">What Makes Us Cool 🚀</h2>

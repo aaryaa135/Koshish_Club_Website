@@ -101,7 +101,7 @@ export default function TimetablePage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/5">
+    <main className="min-h-screen bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5">
       <div className="bg-gradient-to-r from-primary via-accent to-secondary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -146,133 +146,135 @@ export default function TimetablePage() {
           </Card>
         )}
 
-        <div className="grid gap-6">
-          {timetableData.map((dayData, dayIndex) => (
-            <Card
-              key={dayIndex}
-              className="p-6 bg-white border-2 border-primary/20 rounded-3xl hover:border-primary/50 transition-colors shadow-lg"
-            >
-              <div className="mb-6">
-                <h2 className="text-3xl font-bold text-primary mb-2">{dayData.day} 📚</h2>
-                <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
-              </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid gap-6">
+            {timetableData.map((dayData, dayIndex) => (
+              <Card
+                key={dayIndex}
+                className="p-6 fun-card bg-white border-2 border-primary/20 rounded-3xl hover:border-primary/50 transition-colors shadow-lg"
+              >
+                <div className="mb-6">
+                  <h2 className="text-3xl font-bold text-primary mb-2">{dayData.day} 📚</h2>
+                  <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                </div>
 
-              <div className="grid gap-4">
-                {dayData.slots.map((slot, slotIndex) => (
-                  <div
-                    key={slotIndex}
-                    className="p-4 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50 border-2 border-purple-200 rounded-2xl hover:shadow-md transition-all"
+                <div className="grid gap-4">
+                  {dayData.slots.map((slot, slotIndex) => (
+                    <div
+                      key={slotIndex}
+                      className="p-4 bg-gradient-to-br from-primary/5 via-accent/5 to-secondary/5 border-2 border-primary/30 rounded-2xl hover:shadow-md transition-all"
+                    >
+                      {isEditMode ? (
+                        <div className="space-y-4">
+                          <div className="grid md:grid-cols-2 gap-4">
+                            <div>
+                              <label className="block text-sm font-bold text-primary mb-2">⏰ Time</label>
+                              <input
+                                type="text"
+                                value={slot.time}
+                                onChange={(e) => handleSlotChange(dayIndex, slotIndex, "time", e.target.value)}
+                                className="w-full px-4 py-2 border-2 border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+                                placeholder="e.g., 10:00 - 11:00"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-sm font-bold text-primary mb-2">📖 Class</label>
+                              <input
+                                type="text"
+                                value={slot.class}
+                                onChange={(e) => handleSlotChange(dayIndex, slotIndex, "class", e.target.value)}
+                                className="w-full px-4 py-2 border-2 border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+                                placeholder="e.g., Class 8 Math"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-sm font-bold text-primary mb-2">👨‍🏫 Teacher Name</label>
+                              <input
+                                type="text"
+                                value={slot.teacher}
+                                onChange={(e) => handleSlotChange(dayIndex, slotIndex, "teacher", e.target.value)}
+                                className="w-full px-4 py-2 border-2 border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+                                placeholder="e.g., Priya Sharma"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-sm font-bold text-primary mb-2">📚 Subject</label>
+                              <input
+                                type="text"
+                                value={slot.subject}
+                                onChange={(e) => handleSlotChange(dayIndex, slotIndex, "subject", e.target.value)}
+                                className="w-full px-4 py-2 border-2 border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary bg-white"
+                                placeholder="e.g., Mathematics"
+                              />
+                            </div>
+                          </div>
+                          <div className="flex justify-end">
+                            <Button
+                              onClick={() => handleRemoveSlot(dayIndex, slotIndex)}
+                              variant="destructive"
+                              size="sm"
+                              className="gap-2"
+                            >
+                              <X size={16} /> Remove Slot
+                            </Button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-between">
+                          <div className="flex-1">
+                            <div className="grid md:grid-cols-4 gap-6">
+                              <div>
+                                <p className="text-xs font-bold text-primary/60 uppercase tracking-wider">Time</p>
+                                <p className="text-lg font-bold text-primary">⏰ {slot.time}</p>
+                              </div>
+                              <div>
+                                <p className="text-xs font-bold text-accent/60 uppercase tracking-wider">Class</p>
+                                <p className="text-lg font-bold text-accent">📖 {slot.class}</p>
+                              </div>
+                              <div>
+                                <p className="text-xs font-bold text-secondary/60 uppercase tracking-wider">Teacher</p>
+                                <p className="text-lg font-bold text-secondary">👨‍🏫 {slot.teacher}</p>
+                              </div>
+                              <div>
+                                <p className="text-xs font-bold text-primary/60 uppercase tracking-wider">Subject</p>
+                                <p className="text-lg font-bold text-primary">📚 {slot.subject}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                {isEditMode && (
+                  <Button
+                    onClick={() => handleAddSlot(dayIndex)}
+                    variant="outline"
+                    className="w-full mt-4 gap-2 border-2 border-dashed border-primary/50 hover:border-primary"
                   >
-                    {isEditMode ? (
-                      <div className="space-y-4">
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div>
-                            <label className="block text-sm font-bold text-primary mb-2">⏰ Time</label>
-                            <input
-                              type="text"
-                              value={slot.time}
-                              onChange={(e) => handleSlotChange(dayIndex, slotIndex, "time", e.target.value)}
-                              className="w-full px-4 py-2 border-2 border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-                              placeholder="e.g., 10:00 - 11:00"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-bold text-primary mb-2">📖 Class</label>
-                            <input
-                              type="text"
-                              value={slot.class}
-                              onChange={(e) => handleSlotChange(dayIndex, slotIndex, "class", e.target.value)}
-                              className="w-full px-4 py-2 border-2 border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-                              placeholder="e.g., Class 8 Math"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-bold text-primary mb-2">👨‍🏫 Teacher Name</label>
-                            <input
-                              type="text"
-                              value={slot.teacher}
-                              onChange={(e) => handleSlotChange(dayIndex, slotIndex, "teacher", e.target.value)}
-                              className="w-full px-4 py-2 border-2 border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-                              placeholder="e.g., Priya Sharma"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-bold text-primary mb-2">📚 Subject</label>
-                            <input
-                              type="text"
-                              value={slot.subject}
-                              onChange={(e) => handleSlotChange(dayIndex, slotIndex, "subject", e.target.value)}
-                              className="w-full px-4 py-2 border-2 border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary bg-white"
-                              placeholder="e.g., Mathematics"
-                            />
-                          </div>
-                        </div>
-                        <div className="flex justify-end">
-                          <Button
-                            onClick={() => handleRemoveSlot(dayIndex, slotIndex)}
-                            variant="destructive"
-                            size="sm"
-                            className="gap-2"
-                          >
-                            <X size={16} /> Remove Slot
-                          </Button>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="flex items-center justify-between">
-                        <div className="flex-1">
-                          <div className="grid md:grid-cols-4 gap-6">
-                            <div>
-                              <p className="text-xs font-bold text-primary/60 uppercase tracking-wider">Time</p>
-                              <p className="text-lg font-bold text-primary">⏰ {slot.time}</p>
-                            </div>
-                            <div>
-                              <p className="text-xs font-bold text-accent/60 uppercase tracking-wider">Class</p>
-                              <p className="text-lg font-bold text-accent">📖 {slot.class}</p>
-                            </div>
-                            <div>
-                              <p className="text-xs font-bold text-secondary/60 uppercase tracking-wider">Teacher</p>
-                              <p className="text-lg font-bold text-secondary">👨‍🏫 {slot.teacher}</p>
-                            </div>
-                            <div>
-                              <p className="text-xs font-bold text-primary/60 uppercase tracking-wider">Subject</p>
-                              <p className="text-lg font-bold text-primary">📚 {slot.subject}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {isEditMode && (
-                <Button
-                  onClick={() => handleAddSlot(dayIndex)}
-                  variant="outline"
-                  className="w-full mt-4 gap-2 border-2 border-dashed border-primary/50 hover:border-primary"
-                >
-                  + Add Time Slot
-                </Button>
-              )}
-            </Card>
-          ))}
-        </div>
-
-        {isEditMode && (
-          <div className="flex gap-4 mt-8 justify-center">
-            <Button
-              onClick={handleSaveTimetable}
-              size="lg"
-              className="gap-2 bg-gradient-to-r from-primary to-accent text-white"
-            >
-              <Save size={20} /> Save All Changes
-            </Button>
-            <Button onClick={() => setIsEditMode(false)} size="lg" variant="outline" className="gap-2 border-2">
-              <X size={20} /> Cancel
-            </Button>
+                    + Add Time Slot
+                  </Button>
+                )}
+              </Card>
+            ))}
           </div>
-        )}
+
+          {isEditMode && (
+            <div className="flex gap-4 mt-8 justify-center">
+              <Button
+                onClick={handleSaveTimetable}
+                size="lg"
+                className="gap-2 bg-gradient-to-r from-primary to-accent text-white"
+              >
+                <Save size={20} /> Save All Changes
+              </Button>
+              <Button onClick={() => setIsEditMode(false)} size="lg" variant="outline" className="gap-2 border-2">
+                <X size={20} /> Cancel
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
     </main>
   )

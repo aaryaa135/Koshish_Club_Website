@@ -9,7 +9,7 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-gradient-to-b from-secondary/10 via-primary/5 to-background">
+    <section id="about" className="py-20 md:py-32 bg-gradient-to-b from-secondary/15 via-primary/5 to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -28,10 +28,10 @@ export default function About() {
               {initiatives.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-4 p-4 bg-white rounded-2xl border-2 border-primary/20 hover:shadow-lg transition-shadow"
+                  className="flex items-center gap-4 p-4 bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl border-2 border-primary/30 hover:shadow-lg transition-shadow"
                 >
                   <span className="text-3xl">{item.emoji}</span>
-                  <span className="font-bold text-foreground">{item.text}</span>
+                  <span className="font-bold text-primary">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -39,7 +39,7 @@ export default function About() {
 
           {/* Right Illustration */}
           <div className="space-y-6">
-            <div className="fun-card bg-gradient-to-br from-primary/15 to-primary/5 border-primary/30">
+            <div className="fun-card bg-gradient-to-br from-primary/20 to-primary/5 border-primary/30">
               <h3 className="text-2xl font-black text-primary mb-3">🎯 Our Mission</h3>
               <p className="text-foreground/70 font-medium">
                 To empower every single student with world-class education, no matter their background. We believe in
@@ -47,7 +47,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="fun-card bg-gradient-to-br from-accent/15 to-accent/5 border-accent/30">
+            <div className="fun-card bg-gradient-to-br from-accent/20 to-accent/5 border-accent/30">
               <h3 className="text-2xl font-black text-accent mb-3">✨ Our Vision</h3>
               <p className="text-foreground/70 font-medium">
                 Imagine a world where education is a right, not a privilege. Where every kid can dream big and has

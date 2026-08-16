@@ -30,7 +30,7 @@ export default function Reviews() {
   ]
 
   return (
-    <section id="reviews" className="py-16 md:py-24 bg-card">
+    <section id="reviews" className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-secondary/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">What Our Community Says</h2>
@@ -41,10 +41,10 @@ export default function Reviews() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reviews.map((review, idx) => (
-            <Card key={idx} className="p-6">
+            <Card key={idx} className="fun-card bg-card rounded-xl p-6 border border-primary/30">
               <div className="flex gap-1 mb-4">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                  <Star key={i} size={16} className="fill-primary text-primary" />
                 ))}
               </div>
               <p className="text-muted-foreground mb-4">{review.text}</p>

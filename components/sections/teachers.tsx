@@ -36,7 +36,7 @@ export default function Teachers() {
   ]
 
   return (
-    <section id="teachers" className="py-16 md:py-24">
+    <section id="teachers" className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-secondary/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold">Our Teachers</h2>
@@ -47,26 +47,26 @@ export default function Teachers() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {teachers.map((teacher, idx) => (
-            <Card key={idx} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="bg-gradient-to-br from-primary/20 to-accent/20 h-32 flex items-center justify-center">
+            <>
+              <Card key={idx} className="fun-card bg-gradient-to-br from-primary/15 to-accent/15 h-32 rounded-xl flex items-center justify-center border-2 border-primary/30">
                 <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold">
                   {teacher.name.charAt(0)}
                 </div>
-              </div>
+              </Card>
               <div className="p-6">
                 <h3 className="font-bold text-lg">{teacher.name}</h3>
                 <Badge className="mt-2 mb-3">{teacher.subject}</Badge>
                 <div className="space-y-2 text-sm text-muted-foreground mb-4">
                   <p>
-                    <span className="font-semibold text-foreground">Classes:</span> {teacher.classes}
+                    <span className="font-semibold text-primary">Classes:</span> {teacher.classes}
                   </p>
                   <p>
-                    <span className="font-semibold text-foreground">Experience:</span> {teacher.experience}
+                    <span className="font-semibold text-primary">Experience:</span> {teacher.experience}
                   </p>
                 </div>
                 <p className="text-sm italic text-muted-foreground">{teacher.bio}</p>
               </div>
-            </Card>
+            </>
           ))}
         </div>
 
